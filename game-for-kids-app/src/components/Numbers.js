@@ -3,6 +3,9 @@ import _ from 'lodash'
 
 const Numbers = (props) => {
   const numberClassName = (number) => {
+    if (props.usedNumbers.indexOf(number) >= 0) {
+      return 'used'
+    }
     if (props.selectedNumbers.indexOf(number) >= 0) {
       return 'selected'
     }

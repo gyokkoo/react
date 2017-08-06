@@ -22,5 +22,6 @@ span {
 .used {
   background-color: #aaddaa;
   color: #99bb99;
-  cursor: not-allowed;  
+  pointer-events: none;
+  cursor: not-allowed;
 }
