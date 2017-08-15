@@ -1,8 +1,12 @@
+import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+import './styles/style.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+render(
+  <Router history={browserHistory} routes={routes}/>,
+  document.getElementById('app')
+);
