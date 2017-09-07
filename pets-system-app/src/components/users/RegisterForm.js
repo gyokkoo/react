@@ -1,12 +1,12 @@
 import React from 'react'
+import Input from '../common/Input'
 
 const RegisterFrom = (props) => (
   <form>
     <div>{props.error}</div>
-    <label htmlFor='email'>E-mail</label>
-    <input
-      type='email'
+    <Input
       name='email'
+      type='email'
       placeholder='E-mail'
       value={props.user.email}
       onChange={props.onChange} />
