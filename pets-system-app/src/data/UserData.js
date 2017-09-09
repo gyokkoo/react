@@ -1,33 +1,39 @@
-const baseUrl = 'http://localhost:5000/auth'
+// const baseUrl = 'http://localhost:5000/auth'
 
-const getOptions = () => ({
-  method: 'POST',
-  mode: 'cors',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
-})
+// const getOptions = () => ({
+//   method: 'POST',
+//   mode: 'cors',
+//   headers: {
+//     'Accept': 'application/json',
+//     'Content-Type': 'application/json'
+//   }
+// })
 
-const handleJsonRespone = res => res.json
+// const handleJsonRespone = (res) => res.json
 
 class UserData {
   static register (user) {
-    const options = getOptions()
-    options.body = JSON.stringify(user)
-
-    return window
-      .fetch(`${baseUrl}/signup`, options)
-      .then(handleJsonRespone)
+    return window.fetch('http://localhost:5000/auth/signup', {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify(user),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
   }
 
   static login (user) {
-    const options = getOptions()
-    options.body = JSON.stringify(user)
-
-    return window
-      .fetch(`${baseUrl}/login`, options)
-      .then(handleJsonRespone)
+    return window.fetch('http://localhost:5000/auth/login', {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify(user),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './components/common/Navbar'
-import Routes from './components/common/Routes'
+import Routes from './components/common/routes/Routes'
 import './App.css'
 
 class App extends Component {

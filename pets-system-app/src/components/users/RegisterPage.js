@@ -1,5 +1,5 @@
 import React from 'react'
-import FormHelpers from '../common/FormHelpers'
+import FormHelpers from '../common/forms/FormHelpers'
 import RegisterForm from './RegisterForm'
 import userActions from '../../actions/UserActions'
 import userStore from '../../stores/UserStore'
@@ -35,14 +35,14 @@ class RegisterPage extends React.Component {
     if (!data.success) {
       let firstError = data.message
       if (data.errors) {
-        firstError = Object.keys(data.errors).map(k => data.errors[k])[0]        
+        firstError = Object.keys(data.errors).map(k => data.errors[k])[0]
       }
       this.setState({
         error: firstError
       })
     } else {
       toastr.success(data.message)
-      // this.props.history.push('/users/login')
+      this.props.history.push('/users/login')
     }
   }
 
