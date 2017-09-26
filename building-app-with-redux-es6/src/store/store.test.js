@@ -23,5 +23,5 @@ describe('Store', function () {
     };
 
     expect(actual, expected);
-  })
+  });
 });

@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/courseActions';
 import CourseList from './CourseList';
-import ManageCoursePage from './ManageCoursePage';
+// import ManageCoursePage from './ManageCoursePage';
 
 class CoursesPage extends React.Component {
 
