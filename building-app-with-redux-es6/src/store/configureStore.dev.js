@@ -10,4 +10,3 @@ export default function configureStore (initialState) {
     applyMiddleware(thunk, reduxImmutableStateInvariant())
   );
 }
-

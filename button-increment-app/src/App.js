@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Button from './components/Button'
+import ButtonIncrement from './components/ButtonIncrement'
+import ButtonDecrement from './components/ButtonDecrement'
+
 import Result from './components/Result'
 
 class App extends Component {
@@ -11,13 +13,24 @@ class App extends Component {
     }))
   }
 
+  decrementCounter = (decrementValue) => {
+    this.setState((prevState) => ({
+      counter: prevState.counter - decrementValue
+    }))
+  }
+
   render() {
     return (
       <div>
-        <Button incrementValue={1} onClickFunction={this.incrementCounter}/>
-        <Button incrementValue={5} onClickFunction={this.incrementCounter}/>
-        <Button incrementValue={10} onClickFunction={this.incrementCounter}/>
-        <Button incrementValue={100} onClickFunction={this.incrementCounter}/>        
+        <ButtonIncrement incrementValue={1} onClickFunction={this.incrementCounter}/>
+        <ButtonIncrement incrementValue={5} onClickFunction={this.incrementCounter}/>
+        <ButtonIncrement incrementValue={10} onClickFunction={this.incrementCounter}/>
+        <ButtonIncrement incrementValue={100} onClickFunction={this.incrementCounter}/>  
+        <br />      
+        <ButtonDecrement decrementValue={1} onClickFunction={this.decrementCounter}/>
+        <ButtonDecrement decrementValue={5} onClickFunction={this.decrementCounter}/>
+        <ButtonDecrement decrementValue={10} onClickFunction={this.decrementCounter}/>
+        <ButtonDecrement decrementValue={100} onClickFunction={this.decrementCounter}/>
         <Result counter={this.state.counter}/>
       </div>
     )
